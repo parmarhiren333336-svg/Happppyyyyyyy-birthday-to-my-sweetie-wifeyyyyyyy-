@@ -791,9 +791,9 @@ body {
 
     z-index: 10;
 
-    bottom: 25px;
-
     left: 50%;
+
+    bottom: 75px;
 
     transform: translateX(-50%);
 
@@ -803,11 +803,16 @@ body {
 }
 
 .final-btn:hover {
-    transform: translateX(-50%) translateY(-3px) scale(1.04);
+    transform:
+        translateX(-50%)
+        translateY(-3px)
+        scale(1.04);
 }
 
 .final-btn:active {
-    transform: translateX(-50%) scale(0.96);
+    transform:
+        translateX(-50%)
+        scale(0.96);
 }
 
 
