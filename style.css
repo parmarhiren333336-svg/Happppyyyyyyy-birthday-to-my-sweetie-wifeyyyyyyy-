@@ -1208,3 +1208,109 @@ body {
         max-height: 58vh !important;
     }
 }
+/* ================================================= */
+/*        FINAL PHOTO FIX — EXACT 9:16               */
+/* ================================================= */
+
+/* STORY PHOTOS */
+
+.story-page .photo-container {
+    width: 76vw !important;
+    max-width: 330px !important;
+
+    /* EXACT 9:16 */
+    height: calc(76vw * 16 / 9) !important;
+
+    aspect-ratio: 9 / 16 !important;
+
+    flex-shrink: 0 !important;
+
+    overflow: hidden !important;
+
+    position: relative !important;
+
+    background: #000 !important;
+}
+
+
+/* IMAGE */
+
+.story-page .photo-container img {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    /* PHOTO EXACTLY FITS THE BOX */
+    object-fit: fill !important;
+
+    object-position: center !important;
+
+    transform: none !important;
+}
+
+
+/* REMOVE OLD ZOOM */
+
+.story-page.active .photo-container img {
+    transform: none !important;
+}
+
+
+/* ================================================= */
+/*                  MOBILE                           */
+/* ================================================= */
+
+@media (max-width: 480px) {
+
+    .story-page .photo-container {
+        width: 72vw !important;
+        max-width: none !important;
+
+        /* EXACT 9:16 */
+        height: calc(72vw * 16 / 9) !important;
+
+        aspect-ratio: 9 / 16 !important;
+
+        margin: 0 auto !important;
+    }
+
+    .story-page .photo-container img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: fill !important;
+
+        object-position: center !important;
+
+        transform: none !important;
+    }
+}
+
+
+/* ================================================= */
+/*              FINAL PAGE PHOTO                     */
+/* ================================================= */
+
+.final-page .final-photo {
+    width: 65vw !important;
+    max-width: 290px !important;
+
+    height: calc(65vw * 16 / 9) !important;
+
+    aspect-ratio: 9 / 16 !important;
+
+    overflow: hidden !important;
+}
+
+
+.final-page .final-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: fill !important;
+
+    object-position: center !important;
+
+    transform: none !important;
+}
