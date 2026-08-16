@@ -11,7 +11,7 @@
 html,
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
             circle at center,
             #24151d 0%,
             #0c070a 45%,
-            #000 100%
+            #000000 100%
         );
 
     overflow: hidden;
@@ -151,7 +151,8 @@ body {
 
     opacity: 0;
 
-    animation: secondFade 2.5s ease forwards;
+    animation:
+        secondFade 2.5s ease forwards;
 
     animation-delay: 2s;
 }
@@ -199,7 +200,8 @@ body {
 
     opacity: 0;
 
-    animation: buttonFade 2s ease forwards;
+    animation:
+        buttonFade 2s ease forwards;
 
     animation-delay: 4s;
 
@@ -242,7 +244,7 @@ body {
     inset: 0;
 
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 
     background:
         radial-gradient(
@@ -277,7 +279,7 @@ body {
     inset: 0;
 
     width: 100%;
-    height: 100%;
+    height: 100dvh;
 
     display: flex;
 
@@ -289,7 +291,10 @@ body {
 
     text-align: center;
 
-    padding: 20px 18px 25px;
+    padding:
+        20px
+        18px
+        25px;
 
     opacity: 0;
 
@@ -303,6 +308,11 @@ body {
         visibility 1s ease;
 }
 
+
+/* ================================= */
+/*        ACTIVE STORY PAGE           */
+/* ================================= */
+
 .story-page.active {
     opacity: 1;
 
@@ -313,13 +323,13 @@ body {
 
 
 /* ================================= */
-/*          STORY PHOTO               */
+/*             PHOTO                  */
 /* ================================= */
 
 .photo-container {
     position: relative;
 
-    width: min(72vw, 330px);
+    width: min(76vw, 330px);
 
     aspect-ratio: 9 / 16;
 
@@ -344,10 +354,6 @@ body {
 }
 
 
-/* ================================= */
-/*          STORY IMAGE               */
-/* ================================= */
-
 .photo-container img {
     width: 100%;
     height: 100%;
@@ -361,7 +367,9 @@ body {
     transform: none;
 }
 
-.story-page.active .photo-container img {
+
+.story-page.active
+.photo-container img {
     transform: none;
 }
 
@@ -398,7 +406,7 @@ body {
 
     max-width: 380px;
 
-    margin-top: 14px;
+    margin-top: 18px;
 }
 
 
@@ -413,9 +421,10 @@ body {
 
     text-transform: uppercase;
 
-    color: rgba(255,255,255,0.48);
+    color:
+        rgba(255,255,255,0.48);
 
-    margin-bottom: 7px;
+    margin-bottom: 9px;
 }
 
 
@@ -424,11 +433,11 @@ body {
 /* ================================= */
 
 .story-page h1 {
-    font-size: 28px;
+    font-size: 30px;
 
     font-weight: 400;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
     color: #fff;
 
@@ -443,13 +452,16 @@ body {
 /* ================================= */
 
 .message {
-    margin-top: 10px;
+    margin-top: 12px;
 
     font-size: 15px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 
-    color: rgba(255,255,255,0.70);
+    letter-spacing: 0.3px;
+
+    color:
+        rgba(255,255,255,0.70);
 }
 
 
@@ -458,9 +470,11 @@ body {
 /* ================================= */
 
 .next-btn {
-    margin-top: 15px;
+    margin-top: 20px;
 
-    padding: 11px 25px;
+    padding:
+        12px
+        26px;
 
     border:
         1px solid
@@ -520,7 +534,7 @@ body {
     inset: 0;
 
     width: 100%;
-    height: 100%;
+    height: 100dvh;
 
     display: flex;
 
@@ -532,7 +546,10 @@ body {
 
     text-align: center;
 
-    padding: 12px 18px 85px;
+    padding:
+        10px
+        18px
+        70px;
 
     opacity: 0;
 
@@ -547,6 +564,11 @@ body {
 
     overflow: hidden;
 }
+
+
+/* ================================= */
+/*        ACTIVE FINAL PAGE           */
+/* ================================= */
 
 .final-page.active {
     opacity: 1;
@@ -608,9 +630,11 @@ body {
 
     z-index: 2;
 
-    width: min(58vw, 270px);
+    width: min(58vw, 250px);
 
     aspect-ratio: 9 / 16;
+
+    flex-shrink: 0;
 
     border-radius: 22px;
 
@@ -626,9 +650,8 @@ body {
         rgba(255,105,160,0.10);
 
     overflow: hidden;
-
-    flex-shrink: 0;
 }
+
 
 .final-photo img {
     width: 100%;
@@ -643,7 +666,9 @@ body {
     transform: none;
 }
 
-.final-page.active .final-photo img {
+
+.final-page.active
+.final-photo img {
     animation: none;
 }
 
@@ -659,9 +684,9 @@ body {
 
     width: 100%;
 
-    max-width: 390px;
+    max-width: 370px;
 
-    margin-top: 10px;
+    margin-top: 9px;
 }
 
 
@@ -670,13 +695,14 @@ body {
 /* ================================= */
 
 .birthday-title {
-    font-size: clamp(21px, 6vw, 31px);
+    font-size:
+        clamp(20px, 5.5vw, 30px);
 
     font-weight: 400;
 
     letter-spacing: 3px;
 
-    line-height: 1.15;
+    line-height: 1.12;
 
     color: #fff;
 
@@ -691,15 +717,16 @@ body {
 /* ================================= */
 
 .mahi-name {
-    margin-top: 3px;
+    margin-top: 2px;
 
-    font-size: clamp(22px, 6.5vw, 34px);
+    font-size:
+        clamp(22px, 6vw, 32px);
 
     font-weight: 400;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
-    line-height: 1.15;
+    line-height: 1.05;
 
     color: #fff;
 
@@ -710,30 +737,18 @@ body {
 
 
 /* ================================= */
-/*             DATE                   */
-/* ================================= */
-
-.date-text {
-    margin-top: 5px;
-
-    font-size: 15px;
-
-    color: rgba(255,255,255,0.85);
-}
-
-
-/* ================================= */
 /*        FINAL MESSAGE               */
 /* ================================= */
 
 .final-message {
-    margin-top: 8px;
+    margin-top: 6px;
 
     font-size: 12px;
 
-    line-height: 1.45;
+    line-height: 1.4;
 
-    color: rgba(255,255,255,0.70);
+    color:
+        rgba(255,255,255,0.70);
 }
 
 
@@ -742,13 +757,14 @@ body {
 /* ================================= */
 
 .love-line {
-    margin-top: 6px;
+    margin-top: 5px;
 
     font-size: 11px;
 
-    line-height: 1.4;
+    line-height: 1.3;
 
-    color: rgba(255,255,255,0.55);
+    color:
+        rgba(255,255,255,0.55);
 
     font-style: italic;
 }
@@ -765,16 +781,23 @@ body {
 
     left: 50%;
 
-    bottom: 18px;
+    bottom: 12px;
 
     transform: translateX(-50%);
 
     margin: 0;
 
-    padding: 11px 24px;
+    padding:
+        9px
+        20px;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
 
     white-space: nowrap;
 }
+
 
 .final-btn:hover {
     transform:
@@ -782,6 +805,7 @@ body {
         translateY(-3px)
         scale(1.04);
 }
+
 
 .final-btn:active {
     transform:
@@ -800,7 +824,7 @@ body {
     inset: 0;
 
     width: 100%;
-    height: 100%;
+    height: 100dvh;
 
     display: flex;
 
@@ -834,6 +858,7 @@ body {
     overflow: hidden;
 }
 
+
 .surprise-page.active {
     opacity: 1;
 
@@ -855,10 +880,12 @@ body {
     max-width: 390px;
 }
 
+
 .surprise-content h1 {
     margin-top: 10px;
 
-    font-size: clamp(27px, 8vw, 42px);
+    font-size:
+        clamp(27px, 8vw, 42px);
 
     font-weight: 400;
 
@@ -871,6 +898,7 @@ body {
         rgba(255,105,160,0.20);
 }
 
+
 .surprise-content .message {
     margin-top: 18px;
 
@@ -878,7 +906,8 @@ body {
 
     line-height: 1.7;
 
-    color: rgba(255,255,255,0.70);
+    color:
+        rgba(255,255,255,0.70);
 }
 
 
@@ -903,6 +932,7 @@ body {
         heartBeat 1.5s ease-in-out infinite;
 }
 
+
 @keyframes heartBeat {
     0%,
     100% {
@@ -924,7 +954,8 @@ body {
 
     letter-spacing: 1px;
 
-    color: rgba(255,255,255,0.80);
+    color:
+        rgba(255,255,255,0.80);
 
     line-height: 1.6;
 }
@@ -951,15 +982,25 @@ body {
 
 
     /* ============================= */
-    /*       STORY PHOTO             */
+    /*       MOBILE STORY PAGE       */
     /* ============================= */
+
+    .story-page {
+        padding:
+            12px
+            18px
+            65px;
+    }
+
 
     .photo-container {
         width: 72vw;
 
         aspect-ratio: 9 / 16;
 
-        max-width: 330px;
+        max-width: 300px;
+
+        border-radius: 22px;
     }
 
 
@@ -968,18 +1009,19 @@ body {
         height: 100%;
 
         object-fit: contain;
+
+        object-position: center center;
+
+        transform: none;
     }
 
 
-    /* ============================= */
-    /*       STORY CONTENT            */
-    /* ============================= */
-
     .page-content {
-        margin-top: 12px;
+        margin-top: 10px;
 
         max-width: 360px;
     }
+
 
     .story-page h1 {
         font-size: 24px;
@@ -987,45 +1029,53 @@ body {
         letter-spacing: 3px;
     }
 
+
     .message {
         font-size: 13px;
 
         line-height: 1.5;
     }
 
+
     .small-text {
         font-size: 10px;
 
-        letter-spacing: 1.5px;
+        letter-spacing: 1.7px;
     }
+
 
     .next-btn {
         margin-top: 12px;
 
-        padding: 10px 22px;
+        padding:
+            10px
+            21px;
     }
 
 
     /* ============================= */
-    /*       FINAL PAGE              */
+    /*        FINAL PAGE             */
     /* ============================= */
 
     .final-page {
+        width: 100%;
+        height: 100dvh;
+
         padding:
-            10px
+            8px
             15px
-            75px;
+            65px;
 
         justify-content: flex-start;
+
+        overflow: hidden;
     }
 
 
-    /* SMALLER FINAL PHOTO */
-
     .final-photo {
-        width: 54vw;
+        width: 52vw;
 
-        max-width: 250px;
+        max-width: 215px;
 
         aspect-ratio: 9 / 16;
 
@@ -1033,10 +1083,25 @@ body {
     }
 
 
-    /* SMALLER BIRTHDAY TEXT */
+    .final-photo img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        object-position: center center;
+    }
+
+
+    .final-content {
+        margin-top: 8px;
+
+        max-width: 350px;
+    }
+
 
     .birthday-title {
-        font-size: 22px;
+        font-size: 21px;
 
         letter-spacing: 2.5px;
 
@@ -1045,110 +1110,141 @@ body {
 
 
     .mahi-name {
+        margin-top: 2px;
+
         font-size: 25px;
 
         letter-spacing: 3px;
 
-        line-height: 1.1;
-
-        margin-top: 2px;
-    }
-
-
-    .date-text {
-        font-size: 14px;
-
-        margin-top: 4px;
-    }
-
-
-    .final-content {
-        margin-top: 8px;
+        line-height: 1.05;
     }
 
 
     .final-message {
+        margin-top: 6px;
+
         font-size: 11.5px;
 
-        line-height: 1.4;
-
-        margin-top: 7px;
+        line-height: 1.35;
     }
 
 
     .love-line {
-        font-size: 10.5px;
-
-        line-height: 1.35;
-
         margin-top: 5px;
-    }
 
-
-    /* BUTTON ALWAYS VISIBLE */
-
-    .final-btn {
-        bottom: 15px;
-
-        padding:
-            10px
-            21px;
-
-        font-size: 11px;
-    }
-}
-
-
-/* ================================= */
-/*       SHORT HEIGHT PHONES          */
-/* ================================= */
-
-@media (max-height: 700px) {
-
-    .final-page {
-        padding-top: 6px;
-
-        padding-bottom: 65px;
-    }
-
-
-    .final-photo {
-        width: 48vw;
-
-        max-width: 220px;
-    }
-
-
-    .final-content {
-        margin-top: 6px;
-    }
-
-
-    .birthday-title {
-        font-size: 20px;
-    }
-
-
-    .mahi-name {
-        font-size: 22px;
-    }
-
-
-    .final-message {
         font-size: 10.5px;
 
         line-height: 1.3;
     }
 
 
-    .love-line {
+    .final-btn {
+        left: 50%;
+
+        bottom: 12px;
+
+        padding:
+            9px
+            20px;
+
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+
+        transform: translateX(-50%);
+    }
+
+
+    .surprise-content h1 {
+        letter-spacing: 3px;
+    }
+}
+
+
+/* ================================= */
+/*       VERY SMALL PHONES            */
+/* ================================= */
+
+@media (max-height: 700px) {
+
+    .photo-container {
+        width: 58vw;
+
+        max-width: 240px;
+    }
+
+
+    .page-content {
+        margin-top: 7px;
+    }
+
+
+    .next-btn {
+        margin-top: 8px;
+    }
+
+
+    /* ============================= */
+    /*       FINAL SMALL SCREEN      */
+    /* ============================= */
+
+    .final-page {
+        padding-top: 5px;
+        padding-bottom: 58px;
+    }
+
+
+    .final-photo {
+        width: 44vw;
+
+        max-width: 180px;
+    }
+
+
+    .final-content {
+        margin-top: 5px;
+    }
+
+
+    .birthday-title {
+        font-size: 18px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.05;
+    }
+
+
+    .mahi-name {
+        font-size: 21px;
+
+        letter-spacing: 2.5px;
+
+        line-height: 1.0;
+    }
+
+
+    .final-message {
         font-size: 10px;
+
+        line-height: 1.25;
+    }
+
+
+    .love-line {
+        font-size: 9.5px;
+
+        line-height: 1.2;
     }
 
 
     .final-btn {
-        bottom: 10px;
+        bottom: 8px;
 
-        padding: 9px 20px;
+        padding:
+            8px
+            18px;
+
+        font-size: 10px;
     }
-            }
+             }
