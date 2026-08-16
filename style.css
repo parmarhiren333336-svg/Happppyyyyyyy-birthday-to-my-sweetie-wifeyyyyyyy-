@@ -1208,53 +1208,7 @@ body {
         max-height: 58vh !important;
     }
 }
-/* ================================================= */
-/*        FINAL PHOTO FIX — EXACT 9:16               */
-/* ================================================= */
 
-/* STORY PHOTOS */
-
-.story-page .photo-container {
-    width: 76vw !important;
-    max-width: 330px !important;
-
-    /* EXACT 9:16 */
-    height: calc(76vw * 16 / 9) !important;
-
-    aspect-ratio: 9 / 16 !important;
-
-    flex-shrink: 0 !important;
-
-    overflow: hidden !important;
-
-    position: relative !important;
-
-    background: #000 !important;
-}
-
-
-/* IMAGE */
-
-.story-page .photo-container img {
-    width: 100% !important;
-    height: 100% !important;
-
-    display: block !important;
-
-    /* PHOTO EXACTLY FITS THE BOX */
-    object-fit: fill !important;
-
-    object-position: center !important;
-
-    transform: none !important;
-}
-
-
-/* REMOVE OLD ZOOM */
-
-.story-page.active .photo-container img {
-    transform: none !important;
-}
 
 
 /* ================================================= */
