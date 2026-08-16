@@ -347,6 +347,7 @@ body {
     visibility: visible;
 
     transform:
+        translateY(50px)
         scale(1);
 }
 
