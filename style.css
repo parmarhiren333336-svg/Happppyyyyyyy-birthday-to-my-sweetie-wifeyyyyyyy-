@@ -1,0 +1,1111 @@
+/* ================================= */
+/*          BASIC RESET               */
+/* ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #000;
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow: hidden;
+}
+
+
+/* ================================= */
+/*        CINEMATIC OPENING           */
+/* ================================= */
+
+.opening {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #24151d 0%,
+            #0c070a 45%,
+            #000000 100%
+        );
+
+    overflow: hidden;
+
+    z-index: 999;
+}
+
+
+/* ================================= */
+/*          STAR FIELD                */
+/* ================================= */
+
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.85) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.45) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        130px 130px,
+        190px 190px;
+
+    background-position:
+        20px 30px,
+        80px 100px;
+
+    opacity: 0.35;
+
+    animation: starMove 20s linear infinite;
+}
+
+
+@keyframes starMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-150px);
+    }
+}
+
+
+/* ================================= */
+/*        OPENING CONTENT             */
+/* ================================= */
+
+.opening-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 500px;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* ================================= */
+/*          FIRST MESSAGE             */
+/* ================================= */
+
+.intro-text {
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,0.92);
+
+    opacity: 0;
+
+    animation:
+        introFade 2.5s ease forwards;
+}
+
+
+@keyframes introFade {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ================================= */
+/*          SECOND MESSAGE            */
+/* ================================= */
+
+.second-text {
+    margin-top: 18px;
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+
+    line-height: 1.6;
+
+    color: rgba(255,255,255,0.65);
+
+    opacity: 0;
+
+    animation:
+        secondFade 2.5s ease forwards;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes secondFade {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ================================= */
+/*           BEGIN BUTTON             */
+/* ================================= */
+
+.begin-btn {
+    margin-top: 45px;
+
+    padding: 14px 30px;
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    animation:
+        buttonFade 2s ease forwards;
+
+    animation-delay: 4s;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+@keyframes buttonFade {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.begin-btn:hover {
+
+    background:
+        rgba(255,255,255,0.10);
+
+    transform:
+        scale(1.06);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,255,255,0.15);
+}
+
+
+/* ================================= */
+/*        MOBILE ADJUSTMENTS          */
+/* ================================= */
+
+@media (max-width: 480px) {
+
+    .intro-text {
+        font-size: 19px;
+    }
+
+    .second-text {
+        font-size: 16px;
+    }
+
+    .begin-btn {
+        padding: 13px 26px;
+
+        font-size: 12px;
+    }
+}
+/* ================================= */
+/*         STORY PAGES                */
+/* ================================= */
+
+#story {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #211018 0%,
+            #0b0609 50%,
+            #000 100%
+        );
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+
+/* ================================= */
+/*          HIDDEN STATE              */
+/* ================================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* ================================= */
+/*           STORY PAGE              */
+/* ================================= */
+
+.story-page {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        25px
+        20px
+        35px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(1.04);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+}
+
+
+/* ================================= */
+/*        ACTIVE STORY PAGE          */
+/* ================================= */
+
+.story-page.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1);
+}
+
+
+/* ================================= */
+/*           PHOTO BOX               */
+/* ================================= */
+
+.photo-container {
+    position: relative;
+
+    width: min(78vw, 330px);
+
+    height: min(78vw, 430px);
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.16);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.65),
+
+        0 0 45px
+        rgba(255,255,255,0.06);
+
+    background: #080608;
+}
+
+
+/* ================================= */
+/*          PHOTO IMAGE              */
+/* ================================= */
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform:
+        scale(1.03);
+
+    transition:
+        transform 7s ease;
+}
+
+
+/* Slow cinematic zoom */
+
+.story-page.active
+.photo-container img {
+
+    transform:
+        scale(1.10);
+}
+
+
+/* ================================= */
+/*        PHOTO LIGHT EFFECT         */
+/* ================================= */
+
+.photo-container::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.05),
+            transparent 40%,
+            rgba(0,0,0,0.35)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ================================= */
+/*         PAGE CONTENT              */
+/* ================================= */
+
+.page-content {
+    width: 100%;
+
+    max-width: 380px;
+
+    margin-top: 22px;
+}
+
+
+/* ================================= */
+/*          SMALL TEXT               */
+/* ================================= */
+
+.small-text {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    margin-bottom: 9px;
+}
+
+
+/* ================================= */
+/*             TITLE                 */
+/* ================================= */
+
+.story-page h1 {
+    font-size: 30px;
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 20px
+        rgba(255,255,255,0.10);
+}
+
+
+/* ================================= */
+/*            MESSAGE                */
+/* ================================= */
+
+.message {
+    margin-top: 12px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.3px;
+
+    color:
+        rgba(255,255,255,0.70);
+}
+
+
+/* ================================= */
+/*          NEXT BUTTON              */
+/* ================================= */
+
+.next-btn {
+    margin-top: 22px;
+
+    padding:
+        12px
+        26px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.30);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.next-btn:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    background:
+        rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 8px 30px
+        rgba(255,255,255,0.08);
+}
+
+
+.next-btn:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* ================================= */
+/*        MOBILE STORY PAGE          */
+/* ================================= */
+
+@media (max-width: 480px) {
+
+    .story-page {
+        padding:
+            20px
+            18px
+            30px;
+    }
+
+    .photo-container {
+
+        width: 76vw;
+
+        height: 96vw;
+
+        max-height: 410px;
+    }
+
+    .page-content {
+        margin-top: 18px;
+    }
+
+    .story-page h1 {
+        font-size: 25px;
+
+        letter-spacing: 4px;
+    }
+
+    .message {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .small-text {
+        font-size: 10px;
+
+        letter-spacing: 1.7px;
+    }
+
+    .next-btn {
+        margin-top: 18px;
+
+        padding:
+            11px
+            23px;
+    }
+}
+/* ================================= */
+/*       FINAL BIRTHDAY PAGE         */
+/* ================================= */
+
+.final-page {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(1.04);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        visibility 1.2s ease;
+
+    overflow: hidden;
+}
+
+
+/* ================================= */
+/*        ACTIVE FINAL PAGE          */
+/* ================================= */
+
+.final-page.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1);
+}
+
+
+/* ================================= */
+/*          FINAL GLOW               */
+/* ================================= */
+
+.final-glow {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,105,160,0.18),
+            rgba(255,105,160,0.05) 40%,
+            transparent 70%
+        );
+
+    filter:
+        blur(20px);
+
+    animation:
+        finalGlow 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes finalGlow {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.12);
+
+        opacity: 1;
+    }
+}
+
+
+/* ================================= */
+/*          FINAL PHOTO              */
+/* ================================= */
+
+.final-photo {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(70vw, 290px);
+
+    height: min(70vw, 370px);
+
+    border-radius: 24px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.20);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.75),
+
+        0 0 60px
+        rgba(255,105,160,0.10);
+}
+
+
+.final-page.active
+.final-photo img {
+
+    animation:
+        finalPhotoZoom 8s ease forwards;
+}
+
+
+@keyframes finalPhotoZoom {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.10);
+    }
+}
+
+
+/* ================================= */
+/*         FINAL CONTENT             */
+/* ================================= */
+
+.final-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 390px;
+
+    margin-top: 20px;
+}
+
+
+/* ================================= */
+/*       BIRTHDAY TITLE              */
+/* ================================= */
+
+.birthday-title {
+
+    font-size:
+        clamp(25px, 7vw, 38px);
+
+    font-weight: 400;
+
+    letter-spacing:
+        4px;
+
+    line-height: 1.2;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,255,255,0.15);
+}
+
+
+/* ================================= */
+/*           MAHI NAME               */
+/* ================================= */
+
+.mahi-name {
+
+    margin-top: 5px;
+
+    font-size:
+        clamp(28px, 8vw, 42px);
+
+    font-weight: 400;
+
+    letter-spacing: 6px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,105,160,0.25);
+}
+
+
+/* ================================= */
+/*        FINAL MESSAGE              */
+/* ================================= */
+
+.final-message {
+
+    margin-top: 13px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    color:
+        rgba(255,255,255,0.70);
+}
+
+
+/* ================================= */
+/*           LOVE LINE               */
+/* ================================= */
+
+.love-line {
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-style: italic;
+}
+
+
+/* ================================= */
+/*          FINAL BUTTON             */
+/* ================================= */
+
+.final-btn {
+
+    position: relative;
+
+    z-index: 4;
+
+    margin-top: 18px;
+}
+
+
+/* ================================= */
+/*        FINAL SURPRISE             */
+/* ================================= */
+
+.surprise-page {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #26101b 0%,
+            #0c0509 50%,
+            #000 100%
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(1.05);
+
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s ease,
+        visibility 1.3s ease;
+
+    overflow: hidden;
+}
+
+
+.surprise-page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1);
+}
+
+
+/* ================================= */
+/*       SURPRISE CONTENT            */
+/* ================================= */
+
+.surprise-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 390px;
+}
+
+
+.surprise-content h1 {
+
+    margin-top: 10px;
+
+    font-size:
+        clamp(27px, 8vw, 42px);
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    line-height: 1.3;
+
+    text-shadow:
+        0 0 30px
+        rgba(255,105,160,0.20);
+}
+
+
+.surprise-content .message {
+
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,0.70);
+}
+
+
+/* ================================= */
+/*             HEART                 */
+/* ================================= */
+
+.heart {
+
+    margin: 30px auto 20px;
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,105,160,0.40);
+
+    animation:
+        heartBeat 1.5s ease-in-out infinite;
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+/* ================================= */
+/*          ENDING TEXT              */
+/* ================================= */
+
+.ending-text {
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    color:
+        rgba(255,255,255,0.80);
+
+    line-height: 1.6;
+}
+
+
+/* ================================= */
+/*        FINAL MOBILE FIX           */
+/* ================================= */
+
+@media (max-width: 480px) {
+
+    .final-page {
+        padding:
+            18px
+            18px
+            25px;
+    }
+
+    .final-photo {
+
+        width: 67vw;
+
+        height: 82vw;
+
+        max-height: 350px;
+    }
+
+    .final-content {
+        margin-top: 15px;
+    }
+
+    .final-message {
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+    .love-line {
+        font-size: 12px;
+    }
+
+    .surprise-content h1 {
+        letter-spacing: 3px;
+    }
+             }
