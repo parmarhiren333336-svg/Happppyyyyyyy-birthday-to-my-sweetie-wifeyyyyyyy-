@@ -80,9 +80,7 @@ body {
     animation: starMove 20s linear infinite;
 }
 
-
 @keyframes starMove {
-
     from {
         transform: translateY(0);
     }
@@ -115,7 +113,6 @@ body {
 
 .intro-text {
     font-size: 21px;
-
     line-height: 1.7;
     letter-spacing: 1px;
 
@@ -123,13 +120,10 @@ body {
 
     opacity: 0;
 
-    animation:
-        introFade 2.5s ease forwards;
+    animation: introFade 2.5s ease forwards;
 }
 
-
 @keyframes introFade {
-
     0% {
         opacity: 0;
         transform: translateY(25px);
@@ -150,7 +144,6 @@ body {
     margin-top: 18px;
 
     font-size: 17px;
-
     letter-spacing: 1px;
     line-height: 1.6;
 
@@ -164,9 +157,7 @@ body {
     animation-delay: 2s;
 }
 
-
 @keyframes secondFade {
-
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -189,11 +180,9 @@ body {
     padding: 14px 30px;
 
     border: 1px solid rgba(255,255,255,0.45);
-
     border-radius: 50px;
 
-    background:
-        rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.04);
 
     color: #fff;
 
@@ -203,7 +192,6 @@ body {
         serif;
 
     font-size: 13px;
-
     letter-spacing: 2px;
 
     cursor: pointer;
@@ -223,9 +211,7 @@ body {
         box-shadow 0.4s ease;
 }
 
-
 @keyframes buttonFade {
-
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -237,14 +223,10 @@ body {
     }
 }
 
-
 .begin-btn:hover {
+    background: rgba(255,255,255,0.10);
 
-    background:
-        rgba(255,255,255,0.10);
-
-    transform:
-        scale(1.06);
+    transform: scale(1.06);
 
     box-shadow:
         0 0 30px
@@ -258,6 +240,7 @@ body {
 
 #story {
     position: fixed;
+
     inset: 0;
 
     width: 100%;
@@ -287,11 +270,12 @@ body {
 
 
 /* ================================= */
-/*           STORY PAGE              */
+/*           STORY PAGE               */
 /* ================================= */
 
 .story-page {
     position: absolute;
+
     inset: 0;
 
     width: 100%;
@@ -309,8 +293,8 @@ body {
 
     padding:
         20px
-        20px
-        30px;
+        18px
+        25px;
 
     opacity: 0;
 
@@ -326,7 +310,7 @@ body {
 
 
 /* ================================= */
-/*        ACTIVE STORY PAGE          */
+/*        ACTIVE STORY PAGE           */
 /* ================================= */
 
 .story-page.active {
@@ -339,14 +323,17 @@ body {
 
 
 /* ================================= */
-/*           PHOTO BOX               */
-/*           EXACT 9 : 16             */
+/*       ⭐ PHOTO BOX — 9:16 ⭐       */
 /* ================================= */
 
 .photo-container {
     position: relative;
 
-    width: min(78vw, 360px);
+    /*
+       EXACT 9:16 BOX
+    */
+
+    width: min(76vw, 330px);
 
     aspect-ratio: 9 / 16;
 
@@ -367,14 +354,14 @@ body {
         0 0 45px
         rgba(255,255,255,0.06);
 
-    background: #080608;
+    background: #000;
 
     flex-shrink: 0;
 }
 
 
 /* ================================= */
-/*          PHOTO IMAGE              */
+/*       ⭐ FULL PHOTO — NO CROP ⭐   */
 /* ================================= */
 
 .photo-container img {
@@ -384,8 +371,8 @@ body {
     display: block;
 
     /*
-       EXACT 9:16 PHOTO FIT
-       No unwanted cropping.
+       CONTAIN = POORI PHOTO
+       KABHI CROP NAHI HOGI
     */
 
     object-fit: contain;
@@ -399,7 +386,17 @@ body {
 
 
 /* ================================= */
-/*        PHOTO LIGHT EFFECT         */
+/*     NO CINEMATIC PHOTO ZOOM       */
+/* ================================= */
+
+.story-page.active
+.photo-container img {
+    transform: none;
+}
+
+
+/* ================================= */
+/*        PHOTO LIGHT EFFECT          */
 /* ================================= */
 
 .photo-container::after {
@@ -422,7 +419,7 @@ body {
 
 
 /* ================================= */
-/*         PAGE CONTENT              */
+/*         PAGE CONTENT               */
 /* ================================= */
 
 .page-content {
@@ -435,7 +432,7 @@ body {
 
 
 /* ================================= */
-/*          SMALL TEXT               */
+/*          SMALL TEXT                */
 /* ================================= */
 
 .small-text {
@@ -453,7 +450,7 @@ body {
 
 
 /* ================================= */
-/*             TITLE                 */
+/*             TITLE                  */
 /* ================================= */
 
 .story-page h1 {
@@ -472,7 +469,7 @@ body {
 
 
 /* ================================= */
-/*            MESSAGE                */
+/*            MESSAGE                 */
 /* ================================= */
 
 .message {
@@ -490,11 +487,11 @@ body {
 
 
 /* ================================= */
-/*          NEXT BUTTON              */
+/*          NEXT BUTTON               */
 /* ================================= */
 
 .next-btn {
-    margin-top: 22px;
+    margin-top: 20px;
 
     padding:
         12px
@@ -530,9 +527,7 @@ body {
         box-shadow 0.4s ease;
 }
 
-
 .next-btn:hover {
-
     transform:
         translateY(-3px)
         scale(1.04);
@@ -545,16 +540,13 @@ body {
         rgba(255,255,255,0.08);
 }
 
-
 .next-btn:active {
-
-    transform:
-        scale(0.96);
+    transform: scale(0.96);
 }
 
 
 /* ================================= */
-/*       FINAL BIRTHDAY PAGE         */
+/*       FINAL BIRTHDAY PAGE          */
 /* ================================= */
 
 .final-page {
@@ -593,7 +585,7 @@ body {
 
 
 /* ================================= */
-/*        ACTIVE FINAL PAGE          */
+/*        ACTIVE FINAL PAGE           */
 /* ================================= */
 
 .final-page.active {
@@ -606,7 +598,7 @@ body {
 
 
 /* ================================= */
-/*          FINAL GLOW               */
+/*          FINAL GLOW                */
 /* ================================= */
 
 .final-glow {
@@ -633,9 +625,7 @@ body {
     pointer-events: none;
 }
 
-
 @keyframes finalGlow {
-
     0%,
     100% {
         transform: scale(0.9);
@@ -650,7 +640,7 @@ body {
 
 
 /* ================================= */
-/*          FINAL PHOTO              */
+/*          FINAL PHOTO               */
 /* ================================= */
 
 .final-photo {
@@ -680,69 +670,51 @@ body {
     overflow: hidden;
 }
 
-
 .final-photo img {
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: contain;
+
     object-position: center center;
+
+    display: block;
 
     transform: none;
 }
 
-
 .final-page.active
 .final-photo img {
-
-    animation:
-        finalPhotoZoom 8s ease forwards;
-}
-
-
-@keyframes finalPhotoZoom {
-
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.03);
-    }
+    animation: none;
 }
 
 
 /* ================================= */
-/*         FINAL CONTENT             */
+/*         FINAL CONTENT              */
 /* ================================= */
 
 .final-content {
-
     position: relative;
 
     z-index: 3;
 
     max-width: 390px;
 
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
 
 /* ================================= */
-/*       BIRTHDAY TITLE              */
+/*       BIRTHDAY TITLE               */
 /* ================================= */
 
 .birthday-title {
-
     font-size:
         clamp(25px, 7vw, 38px);
 
     font-weight: 400;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 
     line-height: 1.2;
 
@@ -755,11 +727,10 @@ body {
 
 
 /* ================================= */
-/*           MAHI NAME               */
+/*           MAHI NAME                */
 /* ================================= */
 
 .mahi-name {
-
     margin-top: 5px;
 
     font-size:
@@ -778,11 +749,10 @@ body {
 
 
 /* ================================= */
-/*        FINAL MESSAGE              */
+/*        FINAL MESSAGE               */
 /* ================================= */
 
 .final-message {
-
     margin-top: 13px;
 
     font-size: 14px;
@@ -795,11 +765,10 @@ body {
 
 
 /* ================================= */
-/*           LOVE LINE               */
+/*           LOVE LINE                */
 /* ================================= */
 
 .love-line {
-
     margin-top: 10px;
 
     font-size: 13px;
@@ -814,11 +783,10 @@ body {
 
 
 /* ================================= */
-/*          FINAL BUTTON             */
+/*          FINAL BUTTON              */
 /* ================================= */
 
 .final-btn {
-
     position: relative;
 
     z-index: 4;
@@ -828,11 +796,10 @@ body {
 
 
 /* ================================= */
-/*        FINAL SURPRISE             */
+/*        FINAL SURPRISE              */
 /* ================================= */
 
 .surprise-page {
-
     position: absolute;
 
     inset: 0;
@@ -874,7 +841,6 @@ body {
 
 
 .surprise-page.active {
-
     opacity: 1;
 
     visibility: visible;
@@ -884,11 +850,10 @@ body {
 
 
 /* ================================= */
-/*       SURPRISE CONTENT            */
+/*       SURPRISE CONTENT             */
 /* ================================= */
 
 .surprise-content {
-
     position: relative;
 
     z-index: 2;
@@ -898,7 +863,6 @@ body {
 
 
 .surprise-content h1 {
-
     margin-top: 10px;
 
     font-size:
@@ -917,7 +881,6 @@ body {
 
 
 .surprise-content .message {
-
     margin-top: 18px;
 
     font-size: 15px;
@@ -930,11 +893,10 @@ body {
 
 
 /* ================================= */
-/*             HEART                 */
+/*             HEART                  */
 /* ================================= */
 
 .heart {
-
     margin: 30px auto 20px;
 
     font-size: 55px;
@@ -953,7 +915,6 @@ body {
 
 
 @keyframes heartBeat {
-
     0%,
     100% {
         transform: scale(1);
@@ -966,11 +927,10 @@ body {
 
 
 /* ================================= */
-/*          ENDING TEXT              */
+/*          ENDING TEXT               */
 /* ================================= */
 
 .ending-text {
-
     font-size: 16px;
 
     letter-spacing: 1px;
@@ -983,7 +943,7 @@ body {
 
 
 /* ================================= */
-/*        MOBILE ADJUSTMENTS         */
+/*        MOBILE ADJUSTMENTS          */
 /* ================================= */
 
 @media (max-width: 480px) {
@@ -1007,35 +967,31 @@ body {
     /* ============================= */
 
     .story-page {
-
         padding:
-            14px
+            15px
             18px
-            22px;
-
+            20px;
     }
 
 
     /* ============================= */
-    /*       EXACT 9:16 PHOTO        */
+    /*       ⭐ MOBILE 9:16 PHOTO ⭐  */
     /* ============================= */
 
     .photo-container {
-
-        width: min(78vw, 360px);
+        width: 72vw;
 
         aspect-ratio: 9 / 16;
 
         height: auto;
 
-        max-height: 72vh;
+        max-width: 330px;
 
         border-radius: 22px;
     }
 
 
     .photo-container img {
-
         width: 100%;
         height: 100%;
 
@@ -1047,185 +1003,127 @@ body {
     }
 
 
+    .story-page.active
+    .photo-container img {
+        transform: none;
+    }
+
+
     /* ============================= */
-    /*        PAGE CONTENT            */
+    /*        PAGE CONTENT             */
     /* ============================= */
 
     .page-content {
-
         margin-top: 14px;
 
         max-width: 360px;
-
     }
 
 
     .story-page h1 {
-
         font-size: 25px;
 
         letter-spacing: 4px;
-
     }
 
 
     .message {
-
         font-size: 14px;
 
         line-height: 1.6;
-
     }
 
 
     .small-text {
-
         font-size: 10px;
 
         letter-spacing: 1.7px;
-
     }
 
 
     .next-btn {
-
         margin-top: 15px;
 
         padding:
             11px
             23px;
-
     }
 
 
     /* ============================= */
-    /*        FINAL PAGE             */
+    /*        FINAL PAGE              */
     /* ============================= */
 
     .final-page {
-
         padding:
             18px
             18px
             25px;
-
     }
 
 
     .final-photo {
-
-        width: min(67vw, 290px);
+        width: 65vw;
 
         aspect-ratio: 9 / 16;
 
         height: auto;
 
-        max-height: 60vh;
-
+        max-width: 290px;
     }
 
 
     .final-photo img {
-
-        width: 100%;
-        height: 100%;
-
         object-fit: contain;
 
         object-position: center center;
 
+        transform: none;
     }
 
 
     .final-content {
-
         margin-top: 14px;
-
     }
 
 
     .final-message {
-
         font-size: 13px;
 
         line-height: 1.55;
-
     }
 
 
     .love-line {
-
         font-size: 12px;
-
     }
 
 
     .surprise-content h1 {
-
         letter-spacing: 3px;
-
     }
-
 }
 
 
 /* ================================= */
-/*       VERY SMALL PHONES           */
+/*       VERY SMALL PHONES            */
 /* ================================= */
 
 @media (max-height: 700px) {
 
     .photo-container {
-
-        width: min(72vw, 320px);
+        width: 62vw;
 
         aspect-ratio: 9 / 16;
 
         height: auto;
-
-        max-height: 60vh;
-
     }
 
     .page-content {
-
         margin-top: 10px;
-
     }
 
     .next-btn {
-
         margin-top: 10px;
-
     }
-
-}
-
-
-/* ================================= */
-/*       PHOTO POSITION CONTROL      */
-/* ================================= */
-
-/*
-   PHOTO BOX = EXACT 9:16
-
-   Gallery me photo ko 9:16 crop karke
-   upload karoge to poori photo properly fit hogi.
-
-   Photo ko crop nahi kiya ja raha.
-*/
-
-.photo-container img {
-    object-fit: contain;
-    object-position: center center;
-}
-
-
-/* ================================= */
-/*        FINAL PHOTO CONTROL        */
-/* ================================= */
-
-.final-photo img {
-    object-fit: contain;
-    object-position: center center;
-    }
+        }
