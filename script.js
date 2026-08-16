@@ -1,12 +1,11 @@
 // =========================================
 //       MAHI BIRTHDAY WEBSITE
-//            JAVASCRIPT
-//              PART 1
+//           FINAL JAVASCRIPT
 // =========================================
 
 
 // =========================================
-//          OPENING ELEMENTS
+//          ELEMENTS
 // =========================================
 
 const opening = document.getElementById("opening");
@@ -15,6 +14,46 @@ const beginBtn = document.getElementById("beginBtn");
 
 const story = document.getElementById("story");
 
+const birthdayMusic =
+    document.getElementById("birthdayMusic");
+
+const pages =
+    document.querySelectorAll(".page");
+
+const nextButtons =
+    document.querySelectorAll(".next-btn");
+
+
+// =========================================
+//          CURRENT PAGE
+// =========================================
+
+let currentPage = 0;
+
+
+// =========================================
+//       SHOW PAGE FUNCTION
+// =========================================
+
+function showPage(index) {
+
+    pages.forEach((page) => {
+
+        page.classList.remove("active");
+
+    });
+
+
+    if (pages[index]) {
+
+        pages[index].classList.add("active");
+
+        currentPage = index;
+
+    }
+
+}
+
 
 // =========================================
 //          BEGIN BUTTON
@@ -22,7 +61,27 @@ const story = document.getElementById("story");
 
 beginBtn.addEventListener("click", () => {
 
-    // Opening ko smoothly fade out karna
+
+    // -----------------------------
+    // Start music after user tap
+    // -----------------------------
+
+    birthdayMusic.volume = 0.45;
+
+    birthdayMusic.play().catch((error) => {
+
+        console.log(
+            "Music could not start:",
+            error
+        );
+
+    });
+
+
+    // -----------------------------
+    // Fade opening
+    // -----------------------------
+
     opening.style.transition =
         "opacity 1.5s ease, transform 1.5s ease";
 
@@ -32,71 +91,55 @@ beginBtn.addEventListener("click", () => {
         "scale(1.08)";
 
 
-    // Thodi der baad opening hide
+    // -----------------------------
+    // Show story
+    // -----------------------------
+
     setTimeout(() => {
 
         opening.style.display = "none";
 
         story.classList.remove("hidden");
 
+        showPage(0);
+
     }, 1500);
 
 });
-// =========================================
-//       STORY PAGE NAVIGATION
-//          FIXED PART 2
-// =========================================
-
-const storyPages = document.querySelectorAll(
-    ".story-page, .final-page, .surprise-page"
-);
-
-const storyNextButtons = document.querySelectorAll(
-    ".story-page .next-btn, .final-page .next-btn"
-);
-
-let currentPage = 0;
-
-
-// =========================================
-//       SHOW FIRST STORY PAGE
-// =========================================
-
-storyPages.forEach((page) => {
-    page.classList.remove("active");
-});
-
-if (storyPages.length > 0) {
-    storyPages[0].classList.add("active");
-}
 
 
 // =========================================
 //          NEXT BUTTONS
 // =========================================
 
-storyNextButtons.forEach((button) => {
+nextButtons.forEach((button) => {
 
-    button.addEventListener("click", function () {
+    button.addEventListener("click", () => {
 
-        if (currentPage < storyPages.length - 1) {
 
-            // Current page hide
-            storyPages[currentPage].classList.remove("active");
+        // --------------------------------
+        // If another page exists
+        // --------------------------------
 
-            // Next page
+        if (currentPage < pages.length - 1) {
+
             currentPage++;
 
-            // Next page show
-            storyPages[currentPage].classList.add("active");
+            showPage(currentPage);
 
-            // Final page par music thoda loud
+
+            // -----------------------------
+            // Final page music volume
+            // -----------------------------
+
             if (
-                storyPages[currentPage].classList.contains("final-page")
+                pages[currentPage]
+                    .classList
+                    .contains("final-page")
             ) {
-                if (typeof birthdayMusic !== "undefined") {
-                    birthdayMusic.volume = 0.60;
-                }
+
+                birthdayMusic.volume = 0.60;
+
             }
 
         }
@@ -104,50 +147,15 @@ storyNextButtons.forEach((button) => {
     });
 
 });
-  // =========================================
-//          MUSIC + FINAL EFFECTS
-//              PART 3
-// =========================================
 
 
 // =========================================
-//              MUSIC
+//          FINAL BUTTON
 // =========================================
 
-const birthdayMusic = new Audio("music/birthday.mp3");
+const finalButton =
+    document.querySelector(".final-btn");
 
-birthdayMusic.loop = true;
-
-birthdayMusic.volume = 0.45;
-
-
-// =========================================
-//        START MUSIC ON BEGIN
-// =========================================
-
-beginBtn.addEventListener("click", () => {
-
-    birthdayMusic.play().catch(() => {
-        console.log("Music could not start automatically.");
-    });
-
-});
-
-
-// =========================================
-//        FINAL BIRTHDAY PAGE
-// =========================================
-
-const finalPage = document.querySelector(".final-page");
-
-const surprisePage = document.querySelector(".surprise-page");
-
-const finalButton = document.querySelector(".final-btn");
-
-
-// =========================================
-//        FINAL BUTTON EFFECT
-// =========================================
 
 if (finalButton) {
 
@@ -168,11 +176,18 @@ if (finalButton) {
 
 function createConfetti() {
 
-    const confettiCount = 80;
+    const confettiCount = 90;
 
-    for (let i = 0; i < confettiCount; i++) {
 
-        const confetti = document.createElement("div");
+    for (
+        let i = 0;
+        i < confettiCount;
+        i++
+    ) {
+
+        const confetti =
+            document.createElement("div");
+
 
         confetti.style.position = "fixed";
 
@@ -187,27 +202,38 @@ function createConfetti() {
 
         confetti.style.zIndex = "9999";
 
-        confetti.style.pointerEvents = "none";
+        confetti.style.pointerEvents =
+            "none";
 
         confetti.style.background =
             getRandomColor();
 
-        confetti.style.borderRadius = "2px";
+        confetti.style.borderRadius =
+            "2px";
 
         confetti.style.transform =
             `rotate(${Math.random() * 360}deg)`;
 
-        confetti.style.transition =
-            `top ${2 + Math.random() * 3}s linear,
-             transform ${2 + Math.random() * 3}s ease-out`;
 
-        document.body.appendChild(confetti);
+        const fallTime =
+            2 + Math.random() * 3;
+
+
+        confetti.style.transition =
+            `top ${fallTime}s linear,
+             transform ${fallTime}s ease-out`;
+
+
+        document.body.appendChild(
+            confetti
+        );
 
 
         setTimeout(() => {
 
             confetti.style.top =
-                (100 + Math.random() * 20) + "vh";
+                (100 + Math.random() * 20) +
+                "vh";
 
             confetti.style.transform =
                 `rotate(${360 + Math.random() * 720}deg)`;
@@ -227,18 +253,25 @@ function createConfetti() {
 
 
 // =========================================
-//        RANDOM CONFETTI COLORS
+//       RANDOM CONFETTI COLORS
 // =========================================
 
 function getRandomColor() {
 
     const colors = [
+
         "#ffffff",
+
         "#ffd6e7",
+
         "#ff8fba",
+
         "#ffe6a7",
+
         "#d9c2ff"
+
     ];
+
 
     return colors[
         Math.floor(
