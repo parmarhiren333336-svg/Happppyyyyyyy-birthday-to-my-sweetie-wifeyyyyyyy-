@@ -1127,3 +1127,84 @@ body {
         margin-top: 10px;
     }
         }
+/* ========================================= */
+/*      FINAL FORCE FIX — FULL 9:16 PHOTO    */
+/* ========================================= */
+
+.photo-container {
+    width: 76vw !important;
+    max-width: 330px !important;
+
+    height: calc(76vw * 1.777777) !important;
+    max-height: 586px !important;
+
+    aspect-ratio: 9 / 16 !important;
+
+    overflow: hidden !important;
+
+    flex-shrink: 0 !important;
+
+    position: relative !important;
+
+    background: #000 !important;
+}
+
+
+/* FULL IMAGE — NOTHING CROPPED */
+
+.photo-container img {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    transform: none !important;
+
+    display: block !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .photo-container {
+        width: 76vw !important;
+        max-width: none !important;
+
+        height: 135.111vw !important;
+
+        aspect-ratio: 9 / 16 !important;
+
+        max-height: 70vh !important;
+
+        margin: 0 auto !important;
+    }
+
+    .photo-container img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: contain !important;
+        object-position: center center !important;
+
+        transform: none !important;
+    }
+}
+
+
+/* VERY SMALL HEIGHT SCREEN */
+
+@media (max-height: 700px) {
+
+    .photo-container {
+        width: 60vw !important;
+        height: 106.667vw !important;
+
+        max-height: 58vh !important;
+    }
+}
