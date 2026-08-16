@@ -1109,3 +1109,20 @@ body {
         letter-spacing: 3px;
     }
              }
+/* ================================= */
+/*          BIRTHDAY DATE            */
+/* ================================= */
+
+.birthday-date {
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,0.55);
+
+    text-shadow:
+        0 0 15px
+        rgba(255,255,255,0.12);
+}
