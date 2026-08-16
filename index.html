@@ -13,7 +13,18 @@
 <body>
 
     <!-- ================================= -->
-    <!--          OPENING PAGE              -->
+    <!--             MUSIC                 -->
+    <!-- ================================= -->
+
+    <audio id="birthdayMusic"
+           src="music/A_thousand_years_1_min_video(256k).mp3"
+           loop
+           preload="auto">
+    </audio>
+
+
+    <!-- ================================= -->
+    <!--          OPENING PAGE             -->
     <!-- ================================= -->
 
     <section class="opening" id="opening">
@@ -40,18 +51,22 @@
 
 
     <!-- ================================= -->
-    <!--          MAIN STORY                -->
+    <!--          MAIN STORY               -->
     <!-- ================================= -->
 
     <main id="story" class="hidden">
 
 
-        <!-- PAGE 1 -->
+        <!-- ================================= -->
+        <!--             PAGE 1                -->
+        <!-- ================================= -->
 
         <section class="page story-page active">
 
             <div class="photo-container">
+
                 <img src="images/mahi1.jpg" alt="Mahi">
+
             </div>
 
             <div class="page-content">
@@ -79,12 +94,16 @@
         </section>
 
 
-        <!-- PAGE 2 -->
+        <!-- ================================= -->
+        <!--             PAGE 2                -->
+        <!-- ================================= -->
 
         <section class="page story-page">
 
             <div class="photo-container">
+
                 <img src="images/mahi2.jpg" alt="Mahi">
+
             </div>
 
             <div class="page-content">
@@ -112,12 +131,16 @@
         </section>
 
 
-        <!-- PAGE 3 -->
+        <!-- ================================= -->
+        <!--             PAGE 3                -->
+        <!-- ================================= -->
 
         <section class="page story-page">
 
             <div class="photo-container">
+
                 <img src="images/mahi3.jpg" alt="Mahi">
+
             </div>
 
             <div class="page-content">
@@ -145,12 +168,16 @@
         </section>
 
 
-        <!-- PAGE 4 -->
+        <!-- ================================= -->
+        <!--             PAGE 4                -->
+        <!-- ================================= -->
 
         <section class="page story-page">
 
             <div class="photo-container">
+
                 <img src="images/mahi4.jpg" alt="Mahi">
+
             </div>
 
             <div class="page-content">
@@ -179,7 +206,7 @@
 
 
         <!-- ================================= -->
-        <!--          FINAL PAGE                -->
+        <!--          FINAL PAGE               -->
         <!-- ================================= -->
 
         <section class="page final-page">
@@ -232,7 +259,7 @@
 
 
         <!-- ================================= -->
-        <!--          SURPRISE PAGE             -->
+        <!--          SURPRISE PAGE            -->
         <!-- ================================= -->
 
         <section class="page surprise-page">
@@ -272,16 +299,25 @@
 
 
     <!-- ================================= -->
-    <!--             MUSIC                  -->
+    <!--          MUSIC CONTROL             -->
     <!-- ================================= -->
 
-    <audio id="birthdayMusic"
-           src="music/birthday.mp3"
-           loop>
-    </audio>
-
-
     <script src="script.js"></script>
+
+    <script>
+        const beginBtn = document.getElementById("beginBtn");
+        const birthdayMusic = document.getElementById("birthdayMusic");
+
+        beginBtn.addEventListener("click", function () {
+
+            birthdayMusic.volume = 0.7;
+
+            birthdayMusic.play().catch(function (error) {
+                console.log("Music could not start:", error);
+            });
+
+        });
+    </script>
 
 </body>
 
