@@ -80,7 +80,9 @@ body {
     animation: starMove 20s linear infinite;
 }
 
+
 @keyframes starMove {
+
     from {
         transform: translateY(0);
     }
@@ -113,6 +115,7 @@ body {
 
 .intro-text {
     font-size: 21px;
+
     line-height: 1.7;
     letter-spacing: 1px;
 
@@ -124,7 +127,9 @@ body {
         introFade 2.5s ease forwards;
 }
 
+
 @keyframes introFade {
+
     0% {
         opacity: 0;
         transform: translateY(25px);
@@ -145,6 +150,7 @@ body {
     margin-top: 18px;
 
     font-size: 17px;
+
     letter-spacing: 1px;
     line-height: 1.6;
 
@@ -158,7 +164,9 @@ body {
     animation-delay: 2s;
 }
 
+
 @keyframes secondFade {
+
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -181,9 +189,11 @@ body {
     padding: 14px 30px;
 
     border: 1px solid rgba(255,255,255,0.45);
+
     border-radius: 50px;
 
-    background: rgba(255,255,255,0.04);
+    background:
+        rgba(255,255,255,0.04);
 
     color: #fff;
 
@@ -193,6 +203,7 @@ body {
         serif;
 
     font-size: 13px;
+
     letter-spacing: 2px;
 
     cursor: pointer;
@@ -212,7 +223,9 @@ body {
         box-shadow 0.4s ease;
 }
 
+
 @keyframes buttonFade {
+
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -224,10 +237,14 @@ body {
     }
 }
 
-.begin-btn:hover {
-    background: rgba(255,255,255,0.10);
 
-    transform: scale(1.06);
+.begin-btn:hover {
+
+    background:
+        rgba(255,255,255,0.10);
+
+    transform:
+        scale(1.06);
 
     box-shadow:
         0 0 30px
@@ -281,19 +298,22 @@ body {
     height: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     padding:
-        25px
         20px
-        35px;
+        20px
+        30px;
 
     opacity: 0;
+
     visibility: hidden;
 
     transform: scale(1.04);
@@ -311,32 +331,24 @@ body {
 
 .story-page.active {
     opacity: 1;
+
     visibility: visible;
 
-    /*
-       Pehle translateY(50px) tha.
-       Isse poora content unnecessary move ho raha tha.
-    */
-
-    transform: translateY(0) scale(1);
+    transform: scale(1);
 }
 
 
 /* ================================= */
 /*           PHOTO BOX               */
+/*           EXACT 9 : 16             */
 /* ================================= */
 
 .photo-container {
     position: relative;
 
-    width: min(78vw, 330px);
+    width: min(78vw, 360px);
 
-    /*
-       Photo ko thoda natural portrait
-       ratio diya hai.
-    */
-
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 9 / 16;
 
     height: auto;
 
@@ -372,35 +384,17 @@ body {
     display: block;
 
     /*
-       Gallery se crop ki hui photo
-       poori frame me properly fit hogi.
+       EXACT 9:16 PHOTO FIT
+       No unwanted cropping.
     */
 
-    object-fit: cover;
+    object-fit: contain;
 
-    /*
-       Face ko center ke around rakhta hai.
-       Agar face thoda upar ho to 42% try kar sakte ho.
-    */
+    object-position: center center;
 
-    object-position: center 42%;
+    transform: none;
 
-    transform: scale(1);
-
-    transition:
-        transform 7s ease,
-        object-position 0.5s ease;
-}
-
-
-/* ================================= */
-/*       CINEMATIC PHOTO ZOOM        */
-/* ================================= */
-
-.story-page.active
-.photo-container img {
-
-    transform: scale(1.025);
+    transition: none;
 }
 
 
@@ -412,6 +406,7 @@ body {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -427,33 +422,15 @@ body {
 
 
 /* ================================= */
-/*         PHOTO POSITION CONTROL    */
-/* ================================= */
-
-/*
-   PHOTO KO UP/DOWN KARNE KE LIYE:
-
-   50% = center
-   40% = image ka upper part zyada dikhega
-   60% = image ka lower part zyada dikhega
-
-   Abhi 42% rakha hai.
-*/
-
-.photo-container img {
-    object-position: center 42%;
-}
-
-
-/* ================================= */
 /*         PAGE CONTENT              */
 /* ================================= */
 
 .page-content {
     width: 100%;
+
     max-width: 380px;
 
-    margin-top: 22px;
+    margin-top: 18px;
 }
 
 
@@ -553,7 +530,9 @@ body {
         box-shadow 0.4s ease;
 }
 
+
 .next-btn:hover {
+
     transform:
         translateY(-3px)
         scale(1.04);
@@ -566,8 +545,11 @@ body {
         rgba(255,255,255,0.08);
 }
 
+
 .next-btn:active {
-    transform: scale(0.96);
+
+    transform:
+        scale(0.96);
 }
 
 
@@ -577,6 +559,7 @@ body {
 
 .final-page {
     position: absolute;
+
     inset: 0;
 
     width: 100%;
@@ -587,6 +570,7 @@ body {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -594,6 +578,7 @@ body {
     padding: 25px 20px;
 
     opacity: 0;
+
     visibility: hidden;
 
     transform: scale(1.04);
@@ -613,6 +598,7 @@ body {
 
 .final-page.active {
     opacity: 1;
+
     visibility: visible;
 
     transform: scale(1);
@@ -647,7 +633,9 @@ body {
     pointer-events: none;
 }
 
+
 @keyframes finalGlow {
+
     0%,
     100% {
         transform: scale(0.9);
@@ -672,11 +660,9 @@ body {
 
     width: min(70vw, 290px);
 
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 9 / 16;
 
     height: auto;
-
-    overflow: hidden;
 
     border-radius: 24px;
 
@@ -690,12 +676,10 @@ body {
 
         0 0 60px
         rgba(255,105,160,0.10);
+
+    overflow: hidden;
 }
 
-
-/* ================================= */
-/*        FINAL PHOTO IMAGE          */
-/* ================================= */
 
 .final-photo img {
     width: 100%;
@@ -703,30 +687,29 @@ body {
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center center;
 
-    object-position: center 42%;
-
-    transform: scale(1);
-
-    transition: transform 8s ease;
+    transform: none;
 }
 
 
 .final-page.active
 .final-photo img {
+
     animation:
         finalPhotoZoom 8s ease forwards;
 }
 
 
 @keyframes finalPhotoZoom {
+
     from {
         transform: scale(1);
     }
 
     to {
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
 }
 
@@ -736,6 +719,7 @@ body {
 /* ================================= */
 
 .final-content {
+
     position: relative;
 
     z-index: 3;
@@ -751,12 +735,14 @@ body {
 /* ================================= */
 
 .birthday-title {
+
     font-size:
         clamp(25px, 7vw, 38px);
 
     font-weight: 400;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
     line-height: 1.2;
 
@@ -773,6 +759,7 @@ body {
 /* ================================= */
 
 .mahi-name {
+
     margin-top: 5px;
 
     font-size:
@@ -795,6 +782,7 @@ body {
 /* ================================= */
 
 .final-message {
+
     margin-top: 13px;
 
     font-size: 14px;
@@ -811,6 +799,7 @@ body {
 /* ================================= */
 
 .love-line {
+
     margin-top: 10px;
 
     font-size: 13px;
@@ -829,6 +818,7 @@ body {
 /* ================================= */
 
 .final-btn {
+
     position: relative;
 
     z-index: 4;
@@ -842,7 +832,9 @@ body {
 /* ================================= */
 
 .surprise-page {
+
     position: absolute;
+
     inset: 0;
 
     width: 100%;
@@ -851,6 +843,7 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -866,6 +859,7 @@ body {
         );
 
     opacity: 0;
+
     visibility: hidden;
 
     transform: scale(1.05);
@@ -880,6 +874,7 @@ body {
 
 
 .surprise-page.active {
+
     opacity: 1;
 
     visibility: visible;
@@ -893,6 +888,7 @@ body {
 /* ================================= */
 
 .surprise-content {
+
     position: relative;
 
     z-index: 2;
@@ -902,6 +898,7 @@ body {
 
 
 .surprise-content h1 {
+
     margin-top: 10px;
 
     font-size:
@@ -920,6 +917,7 @@ body {
 
 
 .surprise-content .message {
+
     margin-top: 18px;
 
     font-size: 15px;
@@ -936,6 +934,7 @@ body {
 /* ================================= */
 
 .heart {
+
     margin: 30px auto 20px;
 
     font-size: 55px;
@@ -954,6 +953,7 @@ body {
 
 
 @keyframes heartBeat {
+
     0%,
     100% {
         transform: scale(1);
@@ -970,6 +970,7 @@ body {
 /* ================================= */
 
 .ending-text {
+
     font-size: 16px;
 
     letter-spacing: 1px;
@@ -1006,60 +1007,43 @@ body {
     /* ============================= */
 
     .story-page {
+
         padding:
-            15px
+            14px
             18px
             22px;
 
-        /*
-           Content ko screen ke center me
-           rakha gaya hai.
-        */
-
-        justify-content: center;
     }
 
 
     /* ============================= */
-    /*        MOBILE PHOTO           */
+    /*       EXACT 9:16 PHOTO        */
     /* ============================= */
 
     .photo-container {
-        width: 78vw;
 
-        /*
-           4:5 portrait ratio
-        */
+        width: min(78vw, 360px);
 
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 9 / 16;
 
         height: auto;
 
-        max-height: 390px;
+        max-height: 72vh;
 
         border-radius: 22px;
     }
 
 
     .photo-container img {
+
         width: 100%;
         height: 100%;
 
-        object-fit: cover;
+        object-fit: contain;
 
-        /*
-           Face ko properly frame me rakhega.
-        */
+        object-position: center center;
 
-        object-position: center 42%;
-
-        transform: scale(1);
-    }
-
-
-    .story-page.active
-    .photo-container img {
-        transform: scale(1.025);
+        transform: none;
     }
 
 
@@ -1068,39 +1052,49 @@ body {
     /* ============================= */
 
     .page-content {
-        margin-top: 15px;
+
+        margin-top: 14px;
 
         max-width: 360px;
+
     }
 
 
     .story-page h1 {
+
         font-size: 25px;
 
         letter-spacing: 4px;
+
     }
 
 
     .message {
+
         font-size: 14px;
 
         line-height: 1.6;
+
     }
 
 
     .small-text {
+
         font-size: 10px;
 
         letter-spacing: 1.7px;
+
     }
 
 
     .next-btn {
-        margin-top: 16px;
+
+        margin-top: 15px;
 
         padding:
             11px
             23px;
+
     }
 
 
@@ -1109,54 +1103,69 @@ body {
     /* ============================= */
 
     .final-page {
+
         padding:
-            15px
             18px
-            22px;
+            18px
+            25px;
+
     }
 
 
     .final-photo {
-        width: 67vw;
 
-        aspect-ratio: 4 / 5;
+        width: min(67vw, 290px);
+
+        aspect-ratio: 9 / 16;
 
         height: auto;
 
-        max-height: 340px;
+        max-height: 60vh;
+
     }
 
 
     .final-photo img {
+
         width: 100%;
         height: 100%;
 
-        object-fit: cover;
+        object-fit: contain;
 
-        object-position: center 42%;
+        object-position: center center;
+
     }
 
 
     .final-content {
+
         margin-top: 14px;
+
     }
 
 
     .final-message {
+
         font-size: 13px;
 
         line-height: 1.55;
+
     }
 
 
     .love-line {
+
         font-size: 12px;
+
     }
 
 
     .surprise-content h1 {
+
         letter-spacing: 3px;
+
     }
+
 }
 
 
@@ -1167,24 +1176,29 @@ body {
 @media (max-height: 700px) {
 
     .photo-container {
-        width: 70vw;
 
-        aspect-ratio: 4 / 5;
+        width: min(72vw, 320px);
+
+        aspect-ratio: 9 / 16;
 
         height: auto;
 
-        max-height: 320px;
-    }
+        max-height: 60vh;
 
+    }
 
     .page-content {
-        margin-top: 10px;
-    }
 
+        margin-top: 10px;
+
+    }
 
     .next-btn {
+
         margin-top: 10px;
+
     }
+
 }
 
 
@@ -1193,28 +1207,25 @@ body {
 /* ================================= */
 
 /*
-   PHOTO KE ANDAR IMAGE POSITION:
+   PHOTO BOX = EXACT 9:16
 
-   50% = normal center
-   40% = thoda upar ka part dikhega
-   42% = face-focused
-   45% = thoda neeche
-   50% = center
+   Gallery me photo ko 9:16 crop karke
+   upload karoge to poori photo properly fit hogi.
 
-   Agar Mahi ka face upar/neeche ho,
-   sirf 42% ko change karna.
-
-   Example:
-
-   object-position: center 35%;
+   Photo ko crop nahi kiya ja raha.
 */
 
-
 .photo-container img {
-    object-position: center 42%;
+    object-fit: contain;
+    object-position: center center;
 }
 
+
+/* ================================= */
+/*        FINAL PHOTO CONTROL        */
+/* ================================= */
 
 .final-photo img {
-    object-position: center 42%;
-}
+    object-fit: contain;
+    object-position: center center;
+    }
