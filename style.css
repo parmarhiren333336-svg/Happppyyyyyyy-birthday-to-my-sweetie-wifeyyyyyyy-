@@ -11,7 +11,7 @@
 html,
 body {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
             circle at center,
             #24151d 0%,
             #0c070a 45%,
-            #000000 100%
+            #000 100%
         );
 
     overflow: hidden;
@@ -151,8 +151,7 @@ body {
 
     opacity: 0;
 
-    animation:
-        secondFade 2.5s ease forwards;
+    animation: secondFade 2.5s ease forwards;
 
     animation-delay: 2s;
 }
@@ -200,8 +199,7 @@ body {
 
     opacity: 0;
 
-    animation:
-        buttonFade 2s ease forwards;
+    animation: buttonFade 2s ease forwards;
 
     animation-delay: 4s;
 
@@ -291,10 +289,7 @@ body {
 
     text-align: center;
 
-    padding:
-        20px
-        18px
-        25px;
+    padding: 20px 18px 25px;
 
     opacity: 0;
 
@@ -308,11 +303,6 @@ body {
         visibility 1s ease;
 }
 
-
-/* ================================= */
-/*        ACTIVE STORY PAGE           */
-/* ================================= */
-
 .story-page.active {
     opacity: 1;
 
@@ -323,21 +313,15 @@ body {
 
 
 /* ================================= */
-/*       ⭐ PHOTO BOX — 9:16 ⭐       */
+/*          STORY PHOTO               */
 /* ================================= */
 
 .photo-container {
     position: relative;
 
-    /*
-       EXACT 9:16 BOX
-    */
-
-    width: min(76vw, 330px);
+    width: min(72vw, 330px);
 
     aspect-ratio: 9 / 16;
-
-    height: auto;
 
     overflow: hidden;
 
@@ -361,7 +345,7 @@ body {
 
 
 /* ================================= */
-/*       ⭐ FULL PHOTO — NO CROP ⭐   */
+/*          STORY IMAGE               */
 /* ================================= */
 
 .photo-container img {
@@ -370,27 +354,14 @@ body {
 
     display: block;
 
-    /*
-       CONTAIN = POORI PHOTO
-       KABHI CROP NAHI HOGI
-    */
-
     object-fit: contain;
 
     object-position: center center;
 
     transform: none;
-
-    transition: none;
 }
 
-
-/* ================================= */
-/*     NO CINEMATIC PHOTO ZOOM       */
-/* ================================= */
-
-.story-page.active
-.photo-container img {
+.story-page.active .photo-container img {
     transform: none;
 }
 
@@ -427,7 +398,7 @@ body {
 
     max-width: 380px;
 
-    margin-top: 18px;
+    margin-top: 14px;
 }
 
 
@@ -442,10 +413,9 @@ body {
 
     text-transform: uppercase;
 
-    color:
-        rgba(255,255,255,0.48);
+    color: rgba(255,255,255,0.48);
 
-    margin-bottom: 9px;
+    margin-bottom: 7px;
 }
 
 
@@ -454,11 +424,11 @@ body {
 /* ================================= */
 
 .story-page h1 {
-    font-size: 30px;
+    font-size: 28px;
 
     font-weight: 400;
 
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 
     color: #fff;
 
@@ -473,16 +443,13 @@ body {
 /* ================================= */
 
 .message {
-    margin-top: 12px;
+    margin-top: 10px;
 
     font-size: 15px;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
-    letter-spacing: 0.3px;
-
-    color:
-        rgba(255,255,255,0.70);
+    color: rgba(255,255,255,0.70);
 }
 
 
@@ -491,11 +458,9 @@ body {
 /* ================================= */
 
 .next-btn {
-    margin-top: 20px;
+    margin-top: 15px;
 
-    padding:
-        12px
-        26px;
+    padding: 11px 25px;
 
     border:
         1px solid
@@ -563,11 +528,11 @@ body {
 
     align-items: center;
 
-    justify-content: center;
+    justify-content: flex-start;
 
     text-align: center;
 
-    padding: 25px 20px;
+    padding: 12px 18px 85px;
 
     opacity: 0;
 
@@ -582,11 +547,6 @@ body {
 
     overflow: hidden;
 }
-
-
-/* ================================= */
-/*        ACTIVE FINAL PAGE           */
-/* ================================= */
 
 .final-page.active {
     opacity: 1;
@@ -648,13 +608,11 @@ body {
 
     z-index: 2;
 
-    width: min(70vw, 290px);
+    width: min(58vw, 270px);
 
     aspect-ratio: 9 / 16;
 
-    height: auto;
-
-    border-radius: 24px;
+    border-radius: 22px;
 
     border:
         1px solid
@@ -668,6 +626,8 @@ body {
         rgba(255,105,160,0.10);
 
     overflow: hidden;
+
+    flex-shrink: 0;
 }
 
 .final-photo img {
@@ -683,8 +643,7 @@ body {
     transform: none;
 }
 
-.final-page.active
-.final-photo img {
+.final-page.active .final-photo img {
     animation: none;
 }
 
@@ -698,9 +657,11 @@ body {
 
     z-index: 3;
 
+    width: 100%;
+
     max-width: 390px;
 
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 
@@ -709,14 +670,13 @@ body {
 /* ================================= */
 
 .birthday-title {
-    font-size:
-        clamp(25px, 7vw, 38px);
+    font-size: clamp(21px, 6vw, 31px);
 
     font-weight: 400;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
-    line-height: 1.2;
+    line-height: 1.15;
 
     color: #fff;
 
@@ -731,14 +691,15 @@ body {
 /* ================================= */
 
 .mahi-name {
-    margin-top: 5px;
+    margin-top: 3px;
 
-    font-size:
-        clamp(28px, 8vw, 42px);
+    font-size: clamp(22px, 6.5vw, 34px);
 
     font-weight: 400;
 
-    letter-spacing: 6px;
+    letter-spacing: 4px;
+
+    line-height: 1.15;
 
     color: #fff;
 
@@ -749,18 +710,30 @@ body {
 
 
 /* ================================= */
+/*             DATE                   */
+/* ================================= */
+
+.date-text {
+    margin-top: 5px;
+
+    font-size: 15px;
+
+    color: rgba(255,255,255,0.85);
+}
+
+
+/* ================================= */
 /*        FINAL MESSAGE               */
 /* ================================= */
 
 .final-message {
-    margin-top: 13px;
+    margin-top: 8px;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    line-height: 1.65;
+    line-height: 1.45;
 
-    color:
-        rgba(255,255,255,0.70);
+    color: rgba(255,255,255,0.70);
 }
 
 
@@ -769,14 +742,13 @@ body {
 /* ================================= */
 
 .love-line {
-    margin-top: 10px;
+    margin-top: 6px;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    line-height: 1.6;
+    line-height: 1.4;
 
-    color:
-        rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.55);
 
     font-style: italic;
 }
@@ -789,15 +761,17 @@ body {
 .final-btn {
     position: absolute;
 
-    z-index: 10;
+    z-index: 20;
 
     left: 50%;
 
-    bottom: 75px;
+    bottom: 18px;
 
     transform: translateX(-50%);
 
     margin: 0;
+
+    padding: 11px 24px;
 
     white-space: nowrap;
 }
@@ -860,7 +834,6 @@ body {
     overflow: hidden;
 }
 
-
 .surprise-page.active {
     opacity: 1;
 
@@ -882,12 +855,10 @@ body {
     max-width: 390px;
 }
 
-
 .surprise-content h1 {
     margin-top: 10px;
 
-    font-size:
-        clamp(27px, 8vw, 42px);
+    font-size: clamp(27px, 8vw, 42px);
 
     font-weight: 400;
 
@@ -900,7 +871,6 @@ body {
         rgba(255,105,160,0.20);
 }
 
-
 .surprise-content .message {
     margin-top: 18px;
 
@@ -908,8 +878,7 @@ body {
 
     line-height: 1.7;
 
-    color:
-        rgba(255,255,255,0.70);
+    color: rgba(255,255,255,0.70);
 }
 
 
@@ -934,7 +903,6 @@ body {
         heartBeat 1.5s ease-in-out infinite;
 }
 
-
 @keyframes heartBeat {
     0%,
     100% {
@@ -956,8 +924,7 @@ body {
 
     letter-spacing: 1px;
 
-    color:
-        rgba(255,255,255,0.80);
+    color: rgba(255,255,255,0.80);
 
     line-height: 1.6;
 }
@@ -984,19 +951,7 @@ body {
 
 
     /* ============================= */
-    /*       MOBILE STORY PAGE       */
-    /* ============================= */
-
-    .story-page {
-        padding:
-            15px
-            18px
-            20px;
-    }
-
-
-    /* ============================= */
-    /*       ⭐ MOBILE 9:16 PHOTO ⭐  */
+    /*       STORY PHOTO             */
     /* ============================= */
 
     .photo-container {
@@ -1004,11 +959,7 @@ body {
 
         aspect-ratio: 9 / 16;
 
-        height: auto;
-
         max-width: 330px;
-
-        border-radius: 22px;
     }
 
 
@@ -1017,275 +968,187 @@ body {
         height: 100%;
 
         object-fit: contain;
-
-        object-position: center center;
-
-        transform: none;
-    }
-
-
-    .story-page.active
-    .photo-container img {
-        transform: none;
     }
 
 
     /* ============================= */
-    /*        PAGE CONTENT             */
+    /*       STORY CONTENT            */
     /* ============================= */
 
     .page-content {
-        margin-top: 14px;
+        margin-top: 12px;
 
         max-width: 360px;
     }
 
-
     .story-page h1 {
-        font-size: 25px;
+        font-size: 24px;
 
-        letter-spacing: 4px;
+        letter-spacing: 3px;
     }
-
 
     .message {
-        font-size: 14px;
+        font-size: 13px;
 
-        line-height: 1.6;
+        line-height: 1.5;
     }
-
 
     .small-text {
         font-size: 10px;
 
-        letter-spacing: 1.7px;
+        letter-spacing: 1.5px;
     }
 
-
     .next-btn {
-        margin-top: 15px;
+        margin-top: 12px;
 
-        padding:
-            11px
-            23px;
+        padding: 10px 22px;
     }
 
 
     /* ============================= */
-    /*        FINAL PAGE              */
+    /*       FINAL PAGE              */
     /* ============================= */
 
     .final-page {
         padding:
-            18px
-            18px
-            25px;
+            10px
+            15px
+            75px;
+
+        justify-content: flex-start;
     }
 
 
+    /* SMALLER FINAL PHOTO */
+
     .final-photo {
-        width: 65vw;
+        width: 54vw;
+
+        max-width: 250px;
 
         aspect-ratio: 9 / 16;
 
-        height: auto;
-
-        max-width: 290px;
+        border-radius: 20px;
     }
 
 
-    .final-photo img {
-        object-fit: contain;
+    /* SMALLER BIRTHDAY TEXT */
 
-        object-position: center center;
+    .birthday-title {
+        font-size: 22px;
 
-        transform: none;
+        letter-spacing: 2.5px;
+
+        line-height: 1.1;
+    }
+
+
+    .mahi-name {
+        font-size: 25px;
+
+        letter-spacing: 3px;
+
+        line-height: 1.1;
+
+        margin-top: 2px;
+    }
+
+
+    .date-text {
+        font-size: 14px;
+
+        margin-top: 4px;
     }
 
 
     .final-content {
-        margin-top: 14px;
+        margin-top: 8px;
     }
 
 
     .final-message {
-        font-size: 13px;
+        font-size: 11.5px;
 
-        line-height: 1.55;
+        line-height: 1.4;
+
+        margin-top: 7px;
     }
 
 
     .love-line {
-        font-size: 12px;
+        font-size: 10.5px;
+
+        line-height: 1.35;
+
+        margin-top: 5px;
     }
 
 
-    .surprise-content h1 {
-        letter-spacing: 3px;
+    /* BUTTON ALWAYS VISIBLE */
+
+    .final-btn {
+        bottom: 15px;
+
+        padding:
+            10px
+            21px;
+
+        font-size: 11px;
     }
 }
 
 
 /* ================================= */
-/*       VERY SMALL PHONES            */
+/*       SHORT HEIGHT PHONES          */
 /* ================================= */
 
 @media (max-height: 700px) {
 
-    .photo-container {
-        width: 62vw;
+    .final-page {
+        padding-top: 6px;
 
-        aspect-ratio: 9 / 16;
-
-        height: auto;
+        padding-bottom: 65px;
     }
 
-    .page-content {
-        margin-top: 10px;
+
+    .final-photo {
+        width: 48vw;
+
+        max-width: 220px;
     }
 
-    .next-btn {
-        margin-top: 10px;
-    }
-        }
-/* ========================================= */
-/*      FINAL FORCE FIX — FULL 9:16 PHOTO    */
-/* ========================================= */
 
-.photo-container {
-    width: 76vw !important;
-    max-width: 330px !important;
-
-    height: calc(76vw * 1.777777) !important;
-    max-height: 586px !important;
-
-    aspect-ratio: 9 / 16 !important;
-
-    overflow: hidden !important;
-
-    flex-shrink: 0 !important;
-
-    position: relative !important;
-
-    background: #000 !important;
-}
-
-
-/* FULL IMAGE — NOTHING CROPPED */
-
-.photo-container img {
-    width: 100% !important;
-    height: 100% !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    transform: none !important;
-
-    display: block !important;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 480px) {
-
-    .photo-container {
-        width: 76vw !important;
-        max-width: none !important;
-
-        height: 135.111vw !important;
-
-        aspect-ratio: 9 / 16 !important;
-
-        max-height: 70vh !important;
-
-        margin: 0 auto !important;
+    .final-content {
+        margin-top: 6px;
     }
 
-    .photo-container img {
-        width: 100% !important;
-        height: 100% !important;
 
-        object-fit: contain !important;
-        object-position: center center !important;
-
-        transform: none !important;
-    }
-}
-
-
-/* VERY SMALL HEIGHT SCREEN */
-
-@media (max-height: 700px) {
-
-    .photo-container {
-        width: 60vw !important;
-        height: 106.667vw !important;
-
-        max-height: 58vh !important;
-    }
-}
-
-
-
-/* ================================================= */
-/*                  MOBILE                           */
-/* ================================================= */
-
-@media (max-width: 480px) {
-
-    .story-page .photo-container {
-        width: 72vw !important;
-        max-width: none !important;
-
-        /* EXACT 9:16 */
-        height: calc(72vw * 16 / 9) !important;
-
-        aspect-ratio: 9 / 16 !important;
-
-        margin: 0 auto !important;
+    .birthday-title {
+        font-size: 20px;
     }
 
-    .story-page .photo-container img {
-        width: 100% !important;
-        height: 100% !important;
 
-        object-fit: fill !important;
-
-        object-position: center !important;
-
-        transform: none !important;
+    .mahi-name {
+        font-size: 22px;
     }
-}
 
 
-/* ================================================= */
-/*              FINAL PAGE PHOTO                     */
-/* ================================================= */
+    .final-message {
+        font-size: 10.5px;
 
-.final-page .final-photo {
-    width: 65vw !important;
-    max-width: 290px !important;
-
-    height: calc(65vw * 16 / 9) !important;
-
-    aspect-ratio: 9 / 16 !important;
-
-    overflow: hidden !important;
-}
+        line-height: 1.3;
+    }
 
 
-.final-page .final-photo img {
-    width: 100% !important;
-    height: 100% !important;
+    .love-line {
+        font-size: 10px;
+    }
 
-    object-fit: fill !important;
 
-    object-position: center !important;
+    .final-btn {
+        bottom: 10px;
 
-    transform: none !important;
-}
+        padding: 9px 20px;
+    }
+            }
